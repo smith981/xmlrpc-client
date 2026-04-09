@@ -80,6 +80,29 @@ $dom = $client->callRaw('myMethod', 'arg1');
 | sequential `array`     | `<array>`   |
 | associative `array`    | `<struct>`  |
 
+## Artisan command
+
+The package includes an `xmlrpc:call` command for executing XML-RPC requests from the CLI:
+
+```bash
+# Call a method with no arguments
+php artisan xmlrpc:call system.listMethods
+
+# Pass arguments after the method name
+php artisan xmlrpc:call getUser john_doe
+
+# Multiple arguments
+php artisan xmlrpc:call search query 10
+
+# Output raw XML instead of colorized output
+php artisan xmlrpc:call system.listMethods --raw
+
+# Override the configured endpoint for a single call
+php artisan xmlrpc:call system.listMethods --endpoint=https://other-server.com/xmlrpc.php
+```
+
+By default, the response is colorized for readability — XML tags in yellow, struct keys in cyan, string values in green, and fault responses in red.
+
 ## Error handling
 
 ```php

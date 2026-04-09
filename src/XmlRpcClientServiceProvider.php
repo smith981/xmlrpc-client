@@ -2,6 +2,7 @@
 
 namespace Hardtail\XmlRpcClient;
 
+use Hardtail\XmlRpcClient\Console\XmlRpcCallCommand;
 use Illuminate\Support\ServiceProvider;
 
 class XmlRpcClientServiceProvider extends ServiceProvider
@@ -27,6 +28,10 @@ class XmlRpcClientServiceProvider extends ServiceProvider
       $this->publishes([
         __DIR__ . '/../config/xmlrpc-client.php' => config_path('xmlrpc-client.php'),
       ], 'xmlrpc-client-config');
+
+      $this->commands([
+        XmlRpcCallCommand::class,
+      ]);
     }
   }
 }
