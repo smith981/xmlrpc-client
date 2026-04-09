@@ -1,0 +1,24 @@
+{
+    "name": "hardtail/xmlrpc-client",
+    "description": "XMLRPC Client for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.4",
+        "illuminate/support": "^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hardtail\\XmlRpcClient\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hardtail\\XmlRpcClient\\XmlRpcClientServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
